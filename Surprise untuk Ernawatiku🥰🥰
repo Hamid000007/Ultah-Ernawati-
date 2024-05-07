@@ -1,0 +1,48 @@
+   update(time);
+   
+   ctx.fillStyle = 'rgba(0,0,0,0.3)';
+   if (flash) {
+   flash = false;
+   }
+   ctx.fillRect(0, 0, canvas.width, canvas.height);
+   
+   ctx.fillStyle = 'white';
+   ctx.font = "30px Segoe UI";
+   let newTime = time - snapTime;
+   snapTime = time;
+   
+   ctx.fillStyle = 'blue';
+   for (let i = 0, len = fireworks.length; i < len; i++) {
+   let p = fireworks[i];
+   if (p.finish) {
+   fireworks[i] = new firework(rndNum(canvas.width), canvas.height);
+   p = fireworks[i];
+   p.start = time;
+   }
+   p.draw();
+   }
+   
+   window.requestAnimationFrame(draw);
+   }
+   
+   window.addEventListener('resize', function() {
+   canvas.width = canvas.clientWidth;
+   canvas.height = canvas.clientHeight;
+   });
+   
+   init();
+   draw();
+   </script>
+</body>
+</html>
+
+<html>
+	<head>
+		<body>
+			<body bgcolor="black"><center><br>
+			<font face="Abel" size="6px" color="grey"><b></b>
+			<br><font size="3px">
+			<font color="white">[ </font><marquee scrollamount="5" width="630" height="20" behavior="alternate">Selamat ulang tahun Sayang. Semoga panjang umur, murah rejeki, dan sehat selalu.Semoga apa yang kamu cita citakan terwujud semua,maaf mas cuman bisa bikin kayak gini doang hehehe:p!</marquee><font color="white"> ]</font>
+			<br><br><font size="3px" face="Ubuntu Condensed">
+		</body>
+	</font>
